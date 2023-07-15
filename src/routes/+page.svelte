@@ -33,6 +33,7 @@
 	</div>
 	<div class="spacer" />
 	<div class="grass-wrapper">
+		<span class="hint" class:hidden={y > 20}>scroll down!<br />&#10623</span>
 		<img class="grass hero" alt="grass banner" src={grass} />
 	</div>
 </div>
@@ -117,7 +118,8 @@
 			<div />
 			<div />
 			<div>
-				be there or be square or not. it doesn't really matter much to me since it's not my party.<br />
+				be there or be square or not. it doesn't really matter much to me since it's not my party.<br
+				/>
 				<br />
 				- alleged friend
 			</div>
@@ -265,6 +267,60 @@
 		position: relative;
 		bottom: -10px;
 	}
+
+	.hint {
+		position: absolute;
+		top: -24px;
+		text-align: center;
+		color: var(--color-cream);
+		display: block;
+		left: 50%;
+		translate: -50%;
+		-webkit-animation: fadein 5s ease-in; /* Safari, Chrome and Opera > 12.1 */
+		-moz-animation: fadein 5s ease-in; /* Firefox < 16 */
+		-ms-animation: fadein 5s ease-in; /* Internet Explorer */
+		-o-animation: fadein 5s ease-in; /* Opera < 12.1 */
+		animation: fadein 5s ease-in;
+	}
+
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* Firefox < 16 */
+	@-moz-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* Safari, Chrome and Opera > 12.1 */
+	@-webkit-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* Internet Explorer */
+	@-ms-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 	.grass-wrapper {
 		position: sticky;
 		bottom: 0px;
@@ -343,5 +399,9 @@
 		grid-template-rows: repeat(4, auto);
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 30px;
+	}
+
+	.hidden {
+		display: none;
 	}
 </style>
