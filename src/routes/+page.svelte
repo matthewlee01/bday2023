@@ -78,7 +78,7 @@
 				step="900"
 			/><br />
 			<br /><br />
-			<br /><span style:font-family="NanumMyeongjo Bold">save the date (july 30th)...</span><button
+			<br /><span style:font-family="Nanum Myeongjo Bold">save the date (july 30th)...</span><button
 				>...i'll be there!</button
 			>
 		</form>
