@@ -34,7 +34,28 @@
 		<img class="grass hero" alt="grass banner" src={grass} />
 	</div>
 </div>
-<div class="poster">hey hey some content here</div>
+<div class="poster">
+	<div class="centered-container">
+		<h1>...details</h1>
+		who<span class="right">you and me</span><br />
+		what<span class="right">chilling on the grass</span><br />
+		where<span class="right">at central park</span><br />
+		when<span class="right">on july 30th</span><br />
+		why<span class="right">because it will be nice</span><br />
+	</div>
+	<div class="centered-container">
+		<h1 style:text-align='right'>the plan...</h1>
+		<div class="justifier">
+			i'll be sitting out at [LOCATION] from 1pm-6pm with a couple of picnic blankets
+			and a supply of snacks and drinks. feel free to drop by whenever is most convenient
+			for you! we'll chat, have music, share snacks, and maybe play some games if the
+			conditions permit it.	
+		</div>
+	</div>
+	<div class="rsvp">
+
+	</div>
+</div>
 
 <style>
 	@font-face {
@@ -53,8 +74,17 @@
 		src: url('/fonts/nanum-myeongjo/NanumMyeongjo-Regular.ttf');
 	}
 
+	@font-face {
+		font-family: 'Nanum Myeongjo ExtraBold';
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+		src: url('/fonts/nanum-myeongjo/NanumMyeongjo-ExtraBold.ttf');
+	}
+
 	:root {
 		--color-cream: #fdd9b5;
+		--color-dark-brown: #23120b;
 	}
 	:global(body) {
 		margin: 0;
@@ -167,12 +197,32 @@
 	}
 	.grass-wrapper {
 		position: sticky;
-		bottom: -12px;
+		bottom: 0px;
 	}
 
 	.poster {
 		min-height: 100vh;
 		background-color: var(--color-cream);
 		position: relative;
+		padding: 3rem;
+		color: var(--color-dark-brown);
+	}
+
+	.centered-container {
+		margin: 0 auto;
+		max-width: 640px;
+	}
+
+	.justifier {
+		text-align: justify;
+	}
+
+	.poster h1 {
+		color: inherit;
+		font-family: 'Nanum Myeongjo ExtraBold';
+	}
+
+	.poster span.right {
+		float: right;
 	}
 </style>
