@@ -361,7 +361,7 @@
 	}
 
 	.centered-container {
-		margin: 0 auto;
+		margin: 4.4rem auto 0 auto;
 		max-width: 640px;
 	}
 
@@ -383,7 +383,7 @@
 		top: 0;
 		padding: 1rem 0 2rem 0;
 		max-width: 640px;
-		margin: 0 auto 3rem auto;
+		margin: 4.4rem auto 3rem auto;
 		background-color: var(--color-cream);
 		border-bottom: 3px solid var(--color-dark-brown);
 	}
