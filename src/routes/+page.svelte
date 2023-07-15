@@ -100,8 +100,8 @@
 	<div class="centered-container">
 		<h1 style:text-align="right">Gifts...</h1>
 		<div class="justifier">
-			please do not feel obligated to bring any gifts - i sleep on a mattress on the floor in a dusty
-			20 year old apartment with no lights and i really don't have much capacity for material
+			please do not feel obligated to bring any gifts - i sleep on a mattress on the floor in a
+			dusty 20 year old apartment with no lights and i really don't have much capacity for material
 			possessions at the moment. if you really have extra time & money on your hands, consider
 			donating to a charity that's meaningful to you, treating yourself to a yummy meal, or bringing
 			extra snacks/drinks to the picnic!
@@ -110,33 +110,36 @@
 	<div class="centered-container">
 		<h1>...Quotes</h1>
 		<div class="grid">
-			<div>
+			<div style:grid-row="1" style:grid-column="2">
 				i hope everything goes well! one time i went to a birthday party in a park and it was
 				reaaaaaally bad.<br />
 				<br />
 				- friend
 			</div>
-			<div />
-			<div />
-			<div>
+			<div style:grid-row="2" style:grid-column="1">
 				it's going to be a great time! i'm looking forward to it.<br />
 				<br />
 				- another guy
 			</div>
-			<div>
+			<div style:grid-row="3" style:grid-column="2">
 				i've got a good feeling about this one. hopefully this one is better than the last!<br />
 				<br />
 				- some friend
 			</div>
-			<div />
-			<div />
-			<div>
+			<div style:grid-row="4" style:grid-column="1">
 				be there or be square or not. it doesn't really matter much to me since it's not my party.<br
 				/>
 				<br />
 				- alleged friend
 			</div>
 		</div>
+	</div>
+	<div class="centered-container foot">
+		thanks for visiting - looking forward to seeing everyone there!<br/>
+		<br />
+		contact<span class="right">laughew[at]gmail[dot]com</span><br />
+		home<span class="right"><a href="https://matthewjl.xyz">matthewjl.xyz</a></span><br />
+		about<span class="right"><a href="/about">read...</a></span><br />
 	</div>
 </div>
 
@@ -174,9 +177,10 @@
 		margin: 0;
 		overscroll-behavior: none;
 		font-family: 'Nanum Myeongjo';
+		box-sizing: border-box;
 	}
 
-	a {
+	a, a:visited {
 		color: var(--color-dark-brown);
 	}
 
@@ -374,7 +378,7 @@
 	.rsvp {
 		position: sticky;
 		top: 0;
-		padding: 2rem 0 2rem 0;
+		padding: 1rem 0 2rem 0;
 		max-width: 640px;
 		margin: 0 auto 3rem auto;
 		background-color: var(--color-cream);
@@ -421,5 +425,11 @@
 
 	.hidden {
 		display: none;
+	}
+
+	.foot {
+		margin-top: 3rem;
+		border-top: 5px dotted var(--color-dark-brown);
+		padding: 2rem 0;
 	}
 </style>
