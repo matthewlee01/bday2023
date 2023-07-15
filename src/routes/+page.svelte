@@ -5,7 +5,17 @@
 
 	let y = 0;
 	let h = 0;
+	let submitButton;
 	$: hStart = h - 150;
+
+	const submitFn = () => {
+		submitButton.innerHTML = 'submitting...';
+		submitButton.disabled = true;
+		return async ({ update }) => {
+			update();
+			submitButton.innerHTML = 'submitted!';
+		};
+	};
 </script>
 
 <svelte:window bind:scrollY={y} bind:innerHeight={h} />
@@ -17,23 +27,25 @@
 	<div class="title-wrapper">
 		<h5 class:spaced={y > hStart && y < hStart + 120} class="hero-text title matthew">Matthew’s</h5>
 		<div class="hero-text title birthday">
-			<span class:jump={y > hStart + 40 && y < hStart + 140}>B</span>
-			<span class:jump={y > hStart + 60 && y < hStart + 160}>i</span>
-			<span class:jump={y > hStart + 80 && y < hStart + 180}>r</span>
-			<span class:jump={y > hStart + 100 && y < hStart + 200}>t</span>
-			<span class:jump={y > hStart + 120 && y < hStart + 220}>h</span>
-			<span class:jump={y > hStart + 140 && y < hStart + 240}>d</span>
-			<span class:jump={y > hStart + 160 && y < hStart + 260}>a</span>
-			<span class:jump={y > hStart + 180 && y < hStart + 280}>y</span>
+			<span class:jump={y > hStart + 80 && y < hStart + 180}>B</span>
+			<span class:jump={y > hStart + 100 && y < hStart + 200}>i</span>
+			<span class:jump={y > hStart + 120 && y < hStart + 220}>r</span>
+			<span class:jump={y > hStart + 140 && y < hStart + 240}>t</span>
+			<span class:jump={y > hStart + 160 && y < hStart + 260}>h</span>
+			<span class:jump={y > hStart + 180 && y < hStart + 280}>d</span>
+			<span class:jump={y > hStart + 200 && y < hStart + 300}>a</span>
+			<span class:jump={y > hStart + 220 && y < hStart + 320}>y</span>
 		</div>
-		<h5 class:wobble={y > hStart + 280 && y < hStart + 380} class="hero-text title in-the">
+		<h5 class:wobble={y > hStart + 320 && y < hStart + 420} class="hero-text title in-the">
 			at the
 		</h5>
-		<h1 class:grow={y > hStart + 400 && y < hStart + 500} class="hero-text title park">Park</h1>
+		<h1 class:grow={y > hStart + 440 && y < hStart + 540} class="hero-text title park">Park</h1>
 	</div>
 	<div class="spacer" />
 	<div class="grass-wrapper">
-		<span class="hint" class:hidden={y > 20}>scroll down!<br />&#10623</span>
+		<span class="hint" class:hidden={!(y < 20 || (y > hStart && y < hStart + 540))}
+			>scroll down!<br />&#10623</span
+		>
 		<img class="grass hero" alt="grass banner" src={grass} />
 	</div>
 </div>
@@ -42,24 +54,25 @@
 		<h1>...Details</h1>
 		who<span class="right">you and me</span><br />
 		what<span class="right">chilling on the grass</span><br />
-		where<span class="right">at central park</span><br />
-		when<span class="right">on july 30th</span><br />
+		where<span class="right">at rocky point</span><br />
+		when<span class="right">on july 29th</span><br />
 		why<span class="right">because it will be nice</span><br />
 	</div>
 	<br />
 	<div class="centered-container">
 		<h1 style:text-align="right">the Plan...</h1>
 		<div class="justifier">
-			i'll be sitting out at [LOCATION] from 1:00pm-6:00pm with a couple of picnic blankets and a
-			supply of snacks and drinks. feel free to drop by or leave whenever is most convenient for
-			you! we'll chat, have music, share snacks, and maybe play some games if the conditions permit
-			it.
+			i'll be sitting out at <a href="https://goo.gl/maps/JsUAcXaaXSTPU2CQA" target="_blank"
+				>rocky point park</a
+			> from 1:00pm-6:00pm with a couple of picnic blankets and a supply of snacks and drinks. feel free
+			to drop by or leave whenever is most convenient for you! we'll chat, have music, share snacks,
+			and maybe play some games (conditions permitting).
 		</div>
 	</div>
 	<div class="rsvp">
 		<h1>...RSVP</h1>
-		<form method="POST" use:enhance>
-			name<input type="text" placeholder="first & last..." name="note" required /><br />
+		<form method="POST" use:enhance={submitFn}>
+			name<input type="text" placeholder="first & last..." name="name" required /><br />
 			<br />email <span class="small">(optional)</span><input
 				type="email"
 				placeholder="friend@mail.com..."
@@ -72,22 +85,22 @@
 			/><br />
 			<br />ETA <span class="small">(optional)</span><input
 				type="time"
+				name="time"
 				value="06:00"
 				min="01:00"
 				max="06:00"
 				step="900"
 			/><br />
-			<br /><br />
-			<br /><span style:font-family="Nanum Myeongjo Bold">save the date (july 30th)...</span><button
-				>...i'll be there!</button
-			>
+			<br />
+			<br /><span style:font-family="Nanum Myeongjo Bold">save the date (july 30th)...</span>
+			<button bind:this={submitButton}>...i'll be there!</button>
 		</form>
 		<div />
 	</div>
 	<div class="centered-container">
 		<h1 style:text-align="right">Gifts...</h1>
 		<div class="justifier">
-			please do not feel obligated to bring any gifts! i sleep on a mattress on the floor in a dusty
+			please do not feel obligated to bring any gifts - i sleep on a mattress on the floor in a dusty
 			20 year old apartment with no lights and i really don't have much capacity for material
 			possessions at the moment. if you really have extra time & money on your hands, consider
 			donating to a charity that's meaningful to you, treating yourself to a yummy meal, or bringing
@@ -156,10 +169,15 @@
 		--color-cream: #fdd9b5;
 		--color-dark-brown: #23120b;
 	}
+
 	:global(body) {
 		margin: 0;
 		overscroll-behavior: none;
 		font-family: 'Nanum Myeongjo';
+	}
+
+	a {
+		color: var(--color-dark-brown);
 	}
 
 	.hero-wrapper {
@@ -276,11 +294,11 @@
 		display: block;
 		left: 50%;
 		translate: -50%;
-		-webkit-animation: fadein 5s ease-in; /* Safari, Chrome and Opera > 12.1 */
-		-moz-animation: fadein 5s ease-in; /* Firefox < 16 */
-		-ms-animation: fadein 5s ease-in; /* Internet Explorer */
-		-o-animation: fadein 5s ease-in; /* Opera < 12.1 */
-		animation: fadein 5s ease-in;
+		-webkit-animation: fadein 4s ease-in; /* Safari, Chrome and Opera > 12.1 */
+		-moz-animation: fadein 4s ease-in; /* Firefox < 16 */
+		-ms-animation: fadein 4s ease-in; /* Internet Explorer */
+		-o-animation: fadein 4s ease-in; /* Opera < 12.1 */
+		animation: fadein 4s ease-in;
 	}
 
 	@keyframes fadein {
@@ -387,7 +405,7 @@
 		border: 1px dotted var(--color-dark-brown);
 		padding: 0.4rem 0.8rem;
 		float: right;
-		margin-top: -0.6rem;
+		margin-top: -0.4rem;
 	}
 
 	button:hover {
