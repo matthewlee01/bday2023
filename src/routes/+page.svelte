@@ -1,6 +1,8 @@
 <script>
 	import sky from '$lib/images/sky.jpg';
 	import grass from '$lib/images/grass.png';
+	import { enhance } from '$app/forms';
+
 	let y = 0;
 	let h = 0;
 	$: hStart = h - 150;
@@ -36,24 +38,90 @@
 </div>
 <div class="poster">
 	<div class="centered-container">
-		<h1>...details</h1>
+		<h1>...Details</h1>
 		who<span class="right">you and me</span><br />
 		what<span class="right">chilling on the grass</span><br />
 		where<span class="right">at central park</span><br />
 		when<span class="right">on july 30th</span><br />
 		why<span class="right">because it will be nice</span><br />
 	</div>
+	<br />
 	<div class="centered-container">
-		<h1 style:text-align='right'>the plan...</h1>
+		<h1 style:text-align="right">the Plan...</h1>
 		<div class="justifier">
-			i'll be sitting out at [LOCATION] from 1pm-6pm with a couple of picnic blankets
-			and a supply of snacks and drinks. feel free to drop by whenever is most convenient
-			for you! we'll chat, have music, share snacks, and maybe play some games if the
-			conditions permit it.	
+			i'll be sitting out at [LOCATION] from 1:00pm-6:00pm with a couple of picnic blankets and a
+			supply of snacks and drinks. feel free to drop by or leave whenever is most convenient for
+			you! we'll chat, have music, share snacks, and maybe play some games if the conditions permit
+			it.
 		</div>
 	</div>
 	<div class="rsvp">
-
+		<h1>...RSVP</h1>
+		<form method="POST" use:enhance>
+			name<input type="text" placeholder="first & last..." name="note" required /><br />
+			<br />email <span class="small">(optional)</span><input
+				type="email"
+				placeholder="friend@mail.com..."
+				name="email"
+			/><br />
+			<br />note <span class="small">(optional)</span><input
+				type="text"
+				placeholder="your comments/concerns..."
+				name="note"
+			/><br />
+			<br />ETA <span class="small">(optional)</span><input
+				type="time"
+				value="06:00"
+				min="01:00"
+				max="06:00"
+				step="900"
+			/><br />
+			<br /><br />
+			<br /><span style:font-family="NanumMyeongjo Bold">save the date (july 30th)...</span><button
+				>...i'll be there!</button
+			>
+		</form>
+		<div />
+	</div>
+	<div class="centered-container">
+		<h1 style:text-align="right">Gifts...</h1>
+		<div class="justifier">
+			please do not feel obligated to bring any gifts! i sleep on a mattress on the floor in a dusty
+			20 year old apartment with no lights and i really don't have much capacity for material
+			possessions at the moment. if you really have extra time & money on your hands, consider
+			donating to a charity that's meaningful to you, treating yourself to a yummy meal, or bringing
+			extra snacks/drinks to the picnic!
+		</div>
+	</div>
+	<div class="centered-container">
+		<h1>...Quotes</h1>
+		<div class="grid">
+			<div>
+				i hope everything goes well! one time i went to a birthday party in a park and it was
+				reaaaaaally bad.<br />
+				<br />
+				- friend
+			</div>
+			<div />
+			<div />
+			<div>
+				it's going to be a great time! i'm looking forward to it.<br />
+				<br />
+				- another guy
+			</div>
+			<div>
+				i've got a good feeling about this one. hopefully this one is better than the last!<br />
+				<br />
+				- some friend
+			</div>
+			<div />
+			<div />
+			<div>
+				be there or be square or not. it doesn't really matter much to me since it's not my party.<br />
+				<br />
+				- alleged friend
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -75,11 +143,11 @@
 	}
 
 	@font-face {
-		font-family: 'Nanum Myeongjo ExtraBold';
+		font-family: 'Nanum Myeongjo Bold';
 		font-style: normal;
 		font-weight: normal;
 		font-display: swap;
-		src: url('/fonts/nanum-myeongjo/NanumMyeongjo-ExtraBold.ttf');
+		src: url('/fonts/nanum-myeongjo/NanumMyeongjo-Bold.ttf');
 	}
 
 	:root {
@@ -145,6 +213,7 @@
 	.matthew {
 		font-size: 30px;
 		font-family: 'Nanum Myeongjo';
+		letter-spacing: 0px;
 	}
 
 	.birthday {
@@ -170,6 +239,7 @@
 		font-size: 60px;
 		transition: scale 0.2s ease-out;
 		transform-origin: top left;
+		letter-spacing: 2px;
 	}
 
 	.spaced {
@@ -206,6 +276,7 @@
 		position: relative;
 		padding: 3rem;
 		color: var(--color-dark-brown);
+		line-height: 1.4rem;
 	}
 
 	.centered-container {
@@ -219,10 +290,58 @@
 
 	.poster h1 {
 		color: inherit;
-		font-family: 'Nanum Myeongjo ExtraBold';
+		font-family: 'Nanum Myeongjo Bold';
 	}
 
 	.poster span.right {
 		float: right;
+	}
+
+	.rsvp {
+		position: sticky;
+		top: 0;
+		padding: 2rem 0 2rem 0;
+		max-width: 640px;
+		margin: 0 auto 3rem auto;
+		background-color: var(--color-cream);
+		border-bottom: 3px solid var(--color-dark-brown);
+	}
+
+	.small {
+		font-size: 0.6rem;
+	}
+
+	input {
+		border: none;
+		border-bottom: 1px dotted var(--color-dark-brown);
+		background: none;
+		float: right;
+		color: var(--color-dark-brown);
+		font-family: 'Nanum Myeongjo';
+		width: 150px;
+	}
+
+	input:focus {
+		outline: none;
+	}
+
+	button {
+		background: none;
+		font-family: 'Nanum Myeongjo Bold';
+		border: 1px dotted var(--color-dark-brown);
+		padding: 0.4rem 0.8rem;
+		float: right;
+		margin-top: -0.6rem;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-rows: repeat(4, auto);
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 30px;
 	}
 </style>
