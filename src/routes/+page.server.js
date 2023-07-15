@@ -1,14 +1,22 @@
+import prisma from '$lib/prisma';
 
 export const actions = {
 	default: async ({ request }) => {
 		const data = await request.formData();
-		const name = String(data.get('name'));
-		const note = String(data.get('note'));
-		const time = String(data.get('time'));
-		const email = String(data.get('email'));
-		await new Promise(r => setTimeout(r, 5000));
+		const name = data.get('name');
+		const note = data.get('note') || null;
+		const time = data.get('time') || null;
+		const email = data.get('email') || null;
 
-		console.log(name, note, time, email);
-		return { succes: true };
+		await prisma.attendee.create({
+			data: {
+				name,
+				note,
+				time,
+				email
+			}
+		});
+
+		return { success: true };
 	}
 };
