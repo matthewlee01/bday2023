@@ -18,6 +18,9 @@
 	};
 </script>
 
+<svelte:head>
+	<title>you are cordially invited...</title>
+</svelte:head>
 <svelte:window bind:scrollY={y} bind:innerHeight={h} />
 <div class="hero-wrapper">
 	<div class="sky-wrapper">

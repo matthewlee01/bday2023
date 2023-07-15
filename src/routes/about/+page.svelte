@@ -1,3 +1,6 @@
+<svelte:head>
+	<title>about</title>
+</svelte:head>
 <div class="bg">
 	<div class="content">
 		this site was hand-programmed using <a href="https://kit.svelte.dev/" target="_blank"
