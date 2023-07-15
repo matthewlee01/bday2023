@@ -2,6 +2,10 @@
 	import sky from '$lib/images/sky.jpg';
 	import grass from '$lib/images/grass.png';
 	import { enhance } from '$app/forms';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	let y = 0;
 	let h = 0;
@@ -138,7 +142,7 @@
 		</div>
 	</div>
 	<div class="centered-container foot">
-		thanks for visiting - looking forward to seeing everyone there!<br/>
+		thanks for visiting - looking forward to seeing everyone there!<br />
 		<br />
 		contact<span class="right">laughew[at]gmail[dot]com</span><br />
 		home<span class="right"><a href="https://matthewjl.xyz">matthewjl.xyz</a></span><br />
@@ -183,7 +187,8 @@
 		box-sizing: border-box;
 	}
 
-	a, a:visited {
+	a,
+	a:visited {
 		color: var(--color-dark-brown);
 	}
 
