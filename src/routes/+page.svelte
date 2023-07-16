@@ -129,9 +129,10 @@
 				- another guy
 			</div>
 			<div style:grid-row="3" style:grid-column="2">
-				i've got a good feeling about this one. hopefully this one is better than the last!<br />
+				what a silly goofy randy time w matthew wow i’ve never known fun like this … truly
+				exceptional dear heavens oh ho ho this is too much fun<br />
 				<br />
-				- some friend
+				- madeline baek
 			</div>
 			<div style:grid-row="4" style:grid-column="1">
 				be there or be square or not. it doesn't really matter much to me since it's not my party.<br
