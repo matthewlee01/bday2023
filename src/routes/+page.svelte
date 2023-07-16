@@ -124,21 +124,21 @@
 				- friend
 			</div>
 			<div style:grid-row="2" style:grid-column="1">
-				it's going to be a great time! i'm looking forward to it.<br />
+				yes
 				<br />
-				- another guy
+				- jin lee
 			</div>
 			<div style:grid-row="3" style:grid-column="2">
-				what a silly goofy randy time w matthew wow i’ve never known fun like this … truly
+				what a silly goofy randy time w matthew wow i’ve never known fun like this ... truly
 				exceptional dear heavens oh ho ho this is too much fun<br />
 				<br />
 				- madeline baek
 			</div>
 			<div style:grid-row="4" style:grid-column="1">
-				be there or be square or not. it doesn't really matter much to me since it's not my party.<br
+				You don't have one from your mom. That's the most important quote to have.<br
 				/>
 				<br />
-				- alleged friend
+				- my mum
 			</div>
 		</div>
 	</div>
