@@ -69,9 +69,9 @@
 	<div class="centered-container">
 		<h1 style:text-align="right">the Plan...</h1>
 		<div class="justifier">
-			i'll be sitting out at <a href="https://goo.gl/maps/JsUAcXaaXSTPU2CQA" target="_blank"
+			i'll be sitting out at <span class="bold"><a href="https://goo.gl/maps/JsUAcXaaXSTPU2CQA" target="_blank"
 				>rocky point park</a
-			> from 1:00pm-6:00pm with a couple of picnic blankets and a supply of snacks and drinks. feel free
+			></span> from <span class="bold">1:00pm-6:00pm</span> with a couple of picnic blankets and a supply of snacks and drinks. feel free
 			to drop by or leave whenever is most convenient for you! we'll chat, have music, share snacks,
 			and maybe play some games (conditions permitting).
 		</div>
@@ -118,32 +118,43 @@
 		<h1>...Quotes</h1>
 		<div class="grid">
 			<div style:grid-row="1" style:grid-column="2">
-				i hope everything goes well! one time i went to a birthday party in a park and it was
-				reaaaaaally bad.<br />
+				whenever im walking around a park i always wish that i'd randomly stumble into matthew. now, i don't have to wish!<br />
 				<br />
-				- friend
+				- morgan
 			</div>
 			<div style:grid-row="2" style:grid-column="1">
-				yes
+				the second best birthday party i'll have ever gone to
 				<br />
-				- jin lee
+				- jin
 			</div>
 			<div style:grid-row="3" style:grid-column="2">
+				LET'S GOOOOO<br
+				/>
+				<br />
+				- isaiah
+			</div>
+			<div style:grid-row="4" style:grid-column="1">
 				what a silly goofy randy time w matthew wow i’ve never known fun like this ... truly
 				exceptional dear heavens oh ho ho this is too much fun<br />
 				<br />
-				- madeline baek
+				- madi
 			</div>
-			<div style:grid-row="4" style:grid-column="1">
+			<div style:grid-row="5" style:grid-column="2">
+				haha nice ... i'm stuck in the USA because of visa stuff<br
+				/>
+				<br />
+				- kevin
+			</div>
+			<div style:grid-row="6" style:grid-column="1">
 				You don't have one from your mom. That's the most important quote to have.<br
 				/>
 				<br />
 				- my mum
-			</div>
+			</div>	
 		</div>
 	</div>
 	<div class="centered-container foot">
-		thanks for visiting - looking forward to seeing everyone there!<br />
+		<span class="bold">thanks for visiting</span> - looking forward to seeing everyone there!<br />
 		<br />
 		contact<span class="right">laughew[at]gmail[dot]com</span><br />
 		home<span class="right"><a href="https://matthewjl.xyz">matthewjl.xyz</a></span><br />
@@ -191,6 +202,10 @@
 	a,
 	a:visited {
 		color: var(--color-dark-brown);
+	}
+
+	.bold {
+		font-family: "Nanum Myeongjo Bold";
 	}
 
 	.hero-wrapper {
