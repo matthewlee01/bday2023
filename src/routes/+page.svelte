@@ -99,7 +99,7 @@
 				step="900"
 			/><br />
 			<br />
-			<br /><span style:font-family="Nanum Myeongjo Bold">save the date (july 30th)...</span>
+			<br /><span style:font-family="Nanum Myeongjo Bold">save the date (july 29th)...</span>
 			<button bind:this={submitButton}>...i'll be there!</button>
 		</form>
 		<div />
