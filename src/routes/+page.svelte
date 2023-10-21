@@ -100,7 +100,7 @@
 			/><br />
 			<br />
 			<br /><span style:font-family="Nanum Myeongjo Bold">save the date (july 29th)...</span>
-			<button bind:this={submitButton}>...i'll be there!</button>
+			<button disabled bind:this={submitButton}>...i'll be there!</button>
 		</form>
 		<div />
 	</div>
@@ -150,7 +150,13 @@
 				/>
 				<br />
 				- my mum
-			</div>	
+			</div>
+			<div style:grid-row="5" style:grid-column="2">
+				haha nice
+				/>
+				<br />
+				- kevin ye
+			</div>
 		</div>
 	</div>
 	<div class="centered-container foot">
